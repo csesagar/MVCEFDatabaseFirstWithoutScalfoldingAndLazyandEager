@@ -1,0 +1,17 @@
+﻿@model MVCWithEFDBF2.Models.Employee
+
+<h2 style="text-align:center;background-color:yellowgreen;color:orangered">
+    Add New Employee
+</h2>
+@using (Html.BeginForm("AddEmployee", "Employee"))
+{
+    <div>@Html.LabelFor(E => E.Ename)<br />@Html.TextBoxFor(E => E.Ename)</div>
+    <div>@Html.LabelFor(E => E.Job)<br />@Html.TextBoxFor(E => E.Job)</div>
+    <div>@Html.LabelFor(E => E.Salary)<br />@Html.TextBoxFor(E => E.Salary)</div>
+    <div><label>Department</label><br />@Html.DropDownList("Did", "-Select Department-")</div>
+    <div>
+        <input type="submit" value="Save" name="btnSave" />
+        <input type="reset" value="Reset" name="btnReset" />
+    </div>
+}
+@Html.ActionLink("Back to Employee Details", "DisplayEmployees")

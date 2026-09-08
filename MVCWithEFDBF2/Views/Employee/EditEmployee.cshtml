@@ -1,0 +1,18 @@
+﻿@model MVCWithEFDBF2.Models.Employee
+
+<h2 style="text-align:center;background-color:yellowgreen;color:orangered">
+    Edit Employee
+</h2>
+@using (Html.BeginForm("UpdateEmployee", "Employee"))
+{
+    @Html.HiddenFor(E => E.Eid)
+    <div>@Html.LabelFor(E => E.Ename)<br />@Html.TextBoxFor(E => E.Ename)</div>
+    <div>@Html.LabelFor(E => E.Job)<br />@Html.TextBoxFor(E => E.Job)</div>
+    <div>@Html.LabelFor(E => E.Salary)<br />@Html.TextBoxFor(E => E.Salary)</div>
+
+    <div><label>Department</label><br />@Html.DropDownList("Did")</div>
+    <div>
+        <input type="submit" value="Update" name="btnUpdate" />
+        @Html.ActionLink("Cancel", "DisplayEmployees")
+    </div>
+}
